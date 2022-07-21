@@ -9,4 +9,6 @@
 - hosts: localhost
   connection: local
   roles:
-  - adam_mac
+    - basic_settings
+    - installs
+    - dotfiles
