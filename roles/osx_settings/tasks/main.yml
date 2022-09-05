@@ -1,0 +1,64 @@
+# Swipe
+- name: swipescrolldirection
+  command: defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+  tags:
+  - osx
+
+# - name: Add system apps to the Dock
+#   command: defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>{{ item }}</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+#   loop: "{{ dock_apps }}"
+#   tags:
+#   - osx
+
+# for dockItem in {/System/Applications/{"System Preferences","App Store"},/Applications/{"iTerm","Visual Studio Code"}}.app; do
+#   defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>'$dockItem'</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+# done
+
+- name: Set Dock size
+  command: defaults write com.apple.dock tilesize -integer 50
+  tags:
+  - osx
+  # defaults write com.apple.dock largesize -float 128
+
+# - name: Set recently-accessed items
+#   command: defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = { "list-type" = 1; }; "tile-type" = "recents-tile"; }'
+
+# - name: Set mineffect suck
+#   command: defaults write com.apple.dock mineffect suck
+
+- name: Set Launchpad size
+  command: defaults write com.apple.dock springboard-rows -int 8
+  tags:
+  - osx
+
+- name: Set Launchpad size
+  command: defaults write com.apple.dock springboard-columns -int 10 
+  tags:
+  - osx
+
+- name: restart dock
+  command: killall Dock
+  tags:
+  - osx
+
+- name: Ansible file module create directory    
+  file:
+    path: "~/Pictures/Screenshots"    
+    state: directory
+  tags:
+  - settings
+
+- name: ShowStatusBar
+  command: defaults write com.apple.screencapture location -string "~/Pictures/Screenshots"
+  tags:
+  - settings
+
+- name: ShowStatusBar
+  command: defaults write com.apple.finder ShowStatusBar -bool true
+  tags:
+  - settings
+
+- name: restart Finder
+  command: killall Finder
+  tags:
+  - settings

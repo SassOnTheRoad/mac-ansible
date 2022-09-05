@@ -31,3 +31,9 @@ deactivate
 
 
 
+cd mac-ansible
+source ansible_venv/bin/activate
+
+# to run
+./sass_mac.yml -v
+./sass_mac.yml -v -t settings

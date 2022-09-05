@@ -23,6 +23,18 @@
   tags:
   - pyenv
 
+- name: Update .zprofile PYENV_ROOT
+  shell: echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zprofile
+
+- name: Update .zprofile PATH
+  shell: echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zprofile
+
+- name: Update .zprofile pyenv init
+  shell: echo 'eval "$(pyenv init -)"' >> ~/.zprofile
+
+- name: Restart shell
+  shell: source ~/.zprofile
+
 - name: homebrew cleanup
   command: brew cleanup
 
@@ -34,7 +46,7 @@
   register: pyenv_install_result
   failed_when: >
     pyenv_install_result.rc != 0 and
-    pyenv_install_result.stderr_lines != ["pyenv: /Users/chainz/.pyenv/versions/" + item + " already exists"]
+    pyenv_install_result.stderr_lines != ["pyenv: /Users/sasson/.pyenv/versions/" + item + " already exists"]
   loop: '{{ pyenv_python_versions }}'
   ignore_errors: yes
   tags:
@@ -87,3 +99,10 @@
   command: pyenv rehash
   tags:
   - pyenv
+
+
+# xcode-select --install
+- name: xcode-select --install
+  command: softwareupdate --install xcode-select --install
+  tags:
+  - xcode

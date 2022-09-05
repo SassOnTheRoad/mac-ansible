@@ -3,9 +3,11 @@ homebrew_packages:
 # - autojump
 # - automake
 - awscli
+- btop
 # - cloc
 # - coreutils
 # - cowsay
+# - dockutil
 # - enchant
 # - exiftool
 # - fd
@@ -34,6 +36,7 @@ homebrew_packages:
 # - libpng
 # - libtool
 # - libyaml
+- m-cli
 # - memcached
 # - myrepos
 # - ncdu
@@ -71,35 +74,38 @@ homebrew_packages:
 
 
 homebrew_cask_packages:
-# - anki
-# - calibre
-# - discord
+- authy
+- coconutbattery
+- carbon-copy-cloner
+# - data-rescue
+- duplicacy
 - homebrew/cask/docker
-# - evernote
-# - firefox
-# - homebrew/cask-fonts/font-ubuntu-mono-nerd-font
-# - franz
-# - iterm2
-# - istat-menus
-# - java
-# - karabiner-elements
+- dropbox
+- epic-games
+- expressvpn
+- google-chrome
+- google-drive
+- grandperspective 
+# - hazel
+- iterm2
+- istat-menus
+- lastpass
+- opera
 # - keyboard-maestro
-# - mactex
-# - mplayerx
-# - paintbrush
-# - rectangle
-# - skim
-# - skype
 - steam
-# - sublime-text
-# - tableplus
-# - vagrant
+# - typeit4me
+- visual-studio-code
 - vlc
+- vyprvpn
+# - vnc-server
+# - vnc-viewer
+
 
 pyenv_python_versions:
 # In precedence order
 - 3.10.5
 - 3.9.13
+- 2.7.18
 
 pip_packages:
 # - black

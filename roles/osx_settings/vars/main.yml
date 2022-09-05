@@ -1,0 +1,13 @@
+dock_apps:
+# - /Applications/System Settings
+# - /System/Applications/App Store
+# - /Applications/Safari.app
+# - /Applications/Opera.app
+
+  #   - /Applications/Safari.app
+  #   - "\"/Applications/App Store.app\""
+  #   - "\"/Applications/System Preferences.app\""
+  #   - /Applications/Utilities/Terminal.app
+  #   - /Applications/Utilities/Console.app
+  #   - "/Applications --section others"
+  #   - "~/Downloads --section others"
